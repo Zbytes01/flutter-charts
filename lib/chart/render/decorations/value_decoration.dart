@@ -75,7 +75,7 @@ class ValueDecoration extends DecorationPainter {
     final _itemMaxValue = valueGenerator(item);
 
     final _maxValuePainter = ValueDecoration.makeTextPainter(
-      labelGenerator?.call(item) ?? '${_itemMaxValue.toInt()}',
+      labelGenerator?.call(item) ?? '${_itemMaxValue}',
       width,
       textStyle,
     );
