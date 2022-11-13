@@ -151,10 +151,10 @@ class _ChartLinearItemRenderer<T> extends ChartItemRenderer<T>
             // MultiValuePadding offset
             Offset(_multiValuePadding.left * _stack, 0.0);
 
-    final innerConstraints = BoxConstraints.expand(
-        //width: _stackWidth,
-        //height: size.height,
-        );
+    final innerConstraints = BoxConstraints.tightFor(
+      width: _stackWidth,
+      height: size.height,
+    );
 
     child.layout(innerConstraints, parentUsesSize: true);
   }
@@ -216,11 +216,11 @@ class _ChartLinearItemRenderer<T> extends ChartItemRenderer<T>
       }
     }
 
-    final innerConstraints = BoxConstraints.expand(
-        //width: _stackWidth,
-        //height: ((child.item.max ?? 0.0) * _verticalMultiplier) -
-        //    (bottomPaddingHeight * _verticalMultiplier),
-        );
+    final innerConstraints = BoxConstraints(
+      maxWidth: _stackWidth,
+      maxHeight: ((child.item.max ?? 0.0) * _verticalMultiplier) -
+          (bottomPaddingHeight * _verticalMultiplier),
+    );
 
     child.layout(innerConstraints, parentUsesSize: true);
   }
