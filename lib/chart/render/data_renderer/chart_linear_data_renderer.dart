@@ -151,9 +151,9 @@ class _ChartLinearItemRenderer<T> extends ChartItemRenderer<T>
             // MultiValuePadding offset
             Offset(_multiValuePadding.left * _stack, 0.0);
 
-    final innerConstraints = BoxConstraints.tightFor(
-      width: _stackWidth,
-      height: size.height,
+    final innerConstraints = BoxConstraints(
+      maxWidth: _stackWidth,
+      maxHeight: size.height,
     );
 
     child.layout(innerConstraints, parentUsesSize: true);
