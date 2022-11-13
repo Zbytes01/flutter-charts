@@ -156,7 +156,7 @@ class _ChartLinearItemRenderer<T> extends ChartItemRenderer<T>
         //height: size.height,
         );
 
-    child.layout(innerConstraints, parentUsesSize: false);
+    child.layout(innerConstraints, parentUsesSize: true);
   }
 
   /// Set position and size of the child widget for [ChartItem]s
@@ -222,6 +222,6 @@ class _ChartLinearItemRenderer<T> extends ChartItemRenderer<T>
         //    (bottomPaddingHeight * _verticalMultiplier),
         );
 
-    child.layout(innerConstraints, parentUsesSize: false);
+    child.layout(innerConstraints, parentUsesSize: true);
   }
 }
