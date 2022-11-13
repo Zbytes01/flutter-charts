@@ -216,9 +216,9 @@ class _ChartLinearItemRenderer<T> extends ChartItemRenderer<T>
       }
     }
 
-    final innerConstraints = BoxConstraints.tightFor(
-      width: _stackWidth,
-      height: ((child.item.max ?? 0.0) * _verticalMultiplier) -
+    final innerConstraints = BoxConstraints(
+      maxWidth: _stackWidth,
+      maxHeight: ((child.item.max ?? 0.0) * _verticalMultiplier) -
           (bottomPaddingHeight * _verticalMultiplier),
     );
 
